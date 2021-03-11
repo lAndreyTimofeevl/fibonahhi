@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FibonacciResearch;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace fibonahhi
         public FormMain()
         {
             InitializeComponent();
+            comboBoxType.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,6 +34,21 @@ namespace fibonahhi
             long n = Convert.ToInt64(textBoxNum.Text);
             BigInteger search = n;
 
+            switch (comboBoxType.SelectedItem.ToString())
+            {
+                case "на основе строк":
+                    FindCodeOnString(n, search);
+                    break;
+                case "на основе массива":
+                    FindCodeOnArray(search);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void FindCodeOnString(long n, BigInteger search)
+        {
             List<BigInteger> f = new List<BigInteger>();
 
             f.Add(0);
@@ -48,6 +65,17 @@ namespace fibonahhi
             }
             txtbxCode.Text = Convert.ToString(fibcode(f, search));
             listBox2.Items.Add(NUM(f, txtbxCode.Text));
+        }
+
+        private void FindCodeOnArray(BigInteger search)
+        {
+            txtbxCode.Text = string.Empty;
+            string code = FibonacciCodeGenerator.Encode(search);
+
+            BigInteger originalValue = FibonacciCodeGenerator.Decode(code);
+            
+            listBox2.Items.Add(originalValue);
+            txtbxCode.Text = code;
         }
 
         private BigInteger fibcode(IList<BigInteger> f, BigInteger search)

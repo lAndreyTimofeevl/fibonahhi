@@ -36,12 +36,12 @@ namespace fibonahhi
             this.textBoxNum = new System.Windows.Forms.TextBox();
             this.txtbxCode = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(500, 11);
+            this.button1.Location = new System.Drawing.Point(518, 12);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 31);
@@ -97,25 +97,25 @@ namespace fibonahhi
             this.listBox2.Size = new System.Drawing.Size(349, 184);
             this.listBox2.TabIndex = 5;
             // 
-            // comboBox1
+            // comboBoxType
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Items.AddRange(new object[] {
             "на основе строк",
             "на основе массива"});
-            this.comboBox1.Location = new System.Drawing.Point(346, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 28);
-            this.comboBox1.TabIndex = 6;
+            this.comboBoxType.Location = new System.Drawing.Point(346, 13);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(166, 28);
+            this.comboBoxType.TabIndex = 6;
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(711, 339);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.txtbxCode);
             this.Controls.Add(this.textBoxNum);
@@ -124,7 +124,7 @@ namespace fibonahhi
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Код Фибоначчи";
             this.ResumeLayout(false);
@@ -140,7 +140,7 @@ namespace fibonahhi
         private System.Windows.Forms.TextBox textBoxNum;
         private System.Windows.Forms.TextBox txtbxCode;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxType;
     }
 }
 
