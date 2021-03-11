@@ -1,7 +1,7 @@
 ﻿
 namespace fibonahhi
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,11 +29,11 @@ namespace fibonahhi
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNum = new System.Windows.Forms.TextBox();
             this.txtbxCode = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -70,13 +70,13 @@ namespace fibonahhi
             this.label1.TabIndex = 2;
             this.label1.Text = "Введите число";
             // 
-            // textBox1
+            // textBoxNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 13);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 27);
-            this.textBox1.TabIndex = 3;
+            this.textBoxNum.Location = new System.Drawing.Point(131, 13);
+            this.textBoxNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxNum.Name = "textBoxNum";
+            this.textBoxNum.Size = new System.Drawing.Size(209, 27);
+            this.textBoxNum.TabIndex = 3;
             // 
             // txtbxCode
             // 
@@ -104,7 +104,6 @@ namespace fibonahhi
             this.comboBox1.Items.AddRange(new object[] {
             "на основе строк",
             "на основе массива"});
-            this.comboBox1.SelectedIndex = 0;
             this.comboBox1.Location = new System.Drawing.Point(346, 13);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 28);
@@ -119,7 +118,7 @@ namespace fibonahhi
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.txtbxCode);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
@@ -138,7 +137,7 @@ namespace fibonahhi
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNum;
         private System.Windows.Forms.TextBox txtbxCode;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ComboBox comboBox1;
