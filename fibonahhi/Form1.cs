@@ -25,13 +25,16 @@ namespace fibonahhi
                 MessageBox.Show("Заполните поля ввода значений", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+            if (Convert.ToInt64(textBox1.Text) > long.MaxValue)
+            {
+                MessageBox.Show("Вы ввели слишком большое число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             BigInteger search = BigInteger.Parse(textBox1.Text);
-            int n = Convert.ToInt32(textBox1.Text);
+            long n = Convert.ToInt64(textBox1.Text);
             List<BigInteger> f = new List<BigInteger>();
-            BigInteger[] code = new BigInteger[n];
 
             f.Add(0);
             f.Add(1);
@@ -42,41 +45,29 @@ namespace fibonahhi
             while(f[i] <= n)
             {
                 f.Add(f[i - 1] + f[i]);
-                listBox1.Items.Add(f[i]);
+                listBox1.Items.Add(f[i + 1]);
                 i++;
             }
-            listBox1.Items.Add(f[i - 2] + f[i-1]);
-            txtbxCode.Text = Convert.ToString(fibcode(f, search, n));
-            listBox2.Items.Add(NUM(f, txtbxCode.Text, n));
+            txtbxCode.Text = Convert.ToString(fibcode(f, search));
+            listBox2.Items.Add(NUM(f, txtbxCode.Text));
         }
-        BigInteger fibcode(IList<BigInteger> f, BigInteger search, int n)
+        BigInteger fibcode(IList<BigInteger> f, BigInteger search)
         {
-            int temp = n;
             string str = "";
-            for (int i = f.Count -1; i > 0; i--)
+            for (int i = f.Count - 1; i > 0; i--)
             {
                 if (f[i] <= search)
                 {
-                    temp = i;
                     search = search - f[i];
                     str += "1";
-                    for (int j = temp - 1; j > 0; j--)
-                    {
-                        if (f[j] <= search)
-                        {
-                            str += "1";
-                            search = search - f[j];
-                            temp = j;
-                        }
-                        else str += "0";
-                    }
                 }
+                else str += "0";
             }
             str += "1";
             BigInteger code = BigInteger.Parse(str);
             return code;
         }
-        BigInteger NUM(IList<BigInteger> f, string code, int n)
+        BigInteger NUM(IList<BigInteger> f, string code)
         {
             BigInteger sum = 0;
             char[] arr = code.ToCharArray();
